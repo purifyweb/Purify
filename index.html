@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Purify Browser - Home</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="PurifyIcon.svg">
+  
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Styles -->
+  <style>
+    /* ============================================================ */
+    /* Global Reset and Base Styles */
+    /* ============================================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #81D4FA, #B3E5FC);
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    /* ============================================================ */
+    /* Container */
+    /* ============================================================ */
+    .container {
+      background: #fff;
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+    /* ============================================================ */
+    /* Hero Section */
+    /* ============================================================ */
+    .hero {
+      margin-bottom: 40px;
+    }
+    .hero .icon {
+      width: 128px;
+      height: 128px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #1e88e5;
+      margin-bottom: 10px;
+    }
+    .version-info {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    /* ============================================================ */
+    /* Download Button */
+    /* ============================================================ */
+    .download-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background-color: #1e88e5;
+      border: none;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      animation: pulse 2s infinite;
+      margin-top: 20px;
+    }
+    .download-button:hover {
+      background-color: #1565c0;
+      transform: translateY(-3px);
+    }
+    /* ============================================================ */
+    /* Developer Box */
+    /* ============================================================ */
+    .developer-box {
+      margin-top: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      width: fit-content;
+      margin: 30px auto 0 auto;
+    }
+    .developer-box:hover {
+      background: #e0e0e0;
+    }
+    .developer-box img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #1e88e5;
+    }
+    .developer-box a {
+      text-decoration: none;
+      color: #1e88e5;
+      font-weight: 700;
+    }
+    .developer-box a:hover {
+      text-decoration: underline;
+    }
+    /* ============================================================ */
+    /* Footer */
+    /* ============================================================ */
+    footer {
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: rgba(255,255,255,0.9);
+    }
+    /* ============================================================ */
+    /* Animations */
+    /* ============================================================ */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    /* ============================================================ */
+    /* Responsive Styles */
+    /* ============================================================ */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .download-button { font-size: 1rem; padding: 12px 24px; }
+    }
+    /* ============================================================ */
+    /* Filler Comments for Complexity */
+    /* Filler 1: Extra decorative comment */
+    /* Filler 2: Extra decorative comment */
+    /* Filler 3: Extra decorative comment */
+    /* Filler 4: Extra decorative comment */
+    /* Filler 5: Extra decorative comment */
+    /* Filler 6: Extra decorative comment */
+    /* Filler 7: Extra decorative comment */
+    /* Filler 8: Extra decorative comment */
+    /* Filler 9: Extra decorative comment */
+    /* Filler 10: Extra decorative comment */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="PurifyIcon.svg" alt="Purify Icon" class="icon">
+      <h1>Purify Browser</h1>
+      <div class="version-info">
+        Version 0.9 Beta<br>
+        Released: 1 February 2025
+      </div>
+      <p>
+        Purify Browser is the only browser that never tracks your activity and guarantees complete anonymity.
+      </p>
+      <!-- Download Button: Navigates to download.html -->
+      <a class="download-button" href="download.html">Download Purify</a>
+    </section>
+    <!-- Developer Box -->
+    <div class="developer-box" onclick="window.location.href='https://github.com/chrizss.dev'">
+      <img src="pfp.png" alt="Developer Profile Picture">
+      <a href="https://github.com/chrizss.dev" target="_blank">chrizss.dev</a>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Purify Inc. All rights reserved.
+  </footer>
+  <script>
+    // Optional: Smooth scrolling for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
