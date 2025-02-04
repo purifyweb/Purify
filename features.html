@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Features of Purify Browser">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Purify Browser - Features</title>
+  <title>Features - Purify Browser</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="PurifyIcon.svg">
   
-  <!-- Google Font: Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   
-  <!-- CSS Styles (Same as in your main page) -->
   <style>
-    /* ============================================================ */
-    /* Global Reset and Base Styles */
-    /* ============================================================ */
+    /********************************************************/
+    /* Global Reset & Body */
+    /********************************************************/
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -23,182 +23,225 @@
     }
     html, body {
       height: 100%;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #81D4FA, #B3E5FC);
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7;
       color: #333;
-      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    
+    /********************************************************/
+    /* Navigation Bar */
+    /********************************************************/
+    nav {
+      background: #2e86de;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    nav h2 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav li {
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    nav li:hover {
+      opacity: 0.7;
+    }
+    
+    /********************************************************/
+    /* Hero Section */
+    /********************************************************/
+    .hero {
+      min-height: 40vh;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding: 20px;
-    }
-    /* ============================================================ */
-    /* Container */
-    /* ============================================================ */
-    .container {
-      background: #fff;
-      max-width: 600px;
-      width: 100%;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      justify-content: center;
       text-align: center;
-      animation: fadeIn 1s ease-out;
-      margin-bottom: 80px; /* To keep footer off the container */
+      padding: 2rem 1rem;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      position: relative;
+      margin-bottom: 3rem;
     }
-    /* ============================================================ */
-    /* Hero / Section Title */
-    /* ============================================================ */
-    .hero {
-      margin-bottom: 40px;
-    }
-    .hero h1 {
+    .hero .title {
       font-size: 2.5rem;
-      color: #1e88e5;
-      margin-bottom: 20px;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      animation: slideDown 1.2s ease forwards;
     }
-    .hero p {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 30px;
+    .hero .sub-text {
+      font-size: 1.1rem;
+      color: #f0f0f0;
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeIn 1.5s ease forwards;
     }
-    /* ============================================================ */
-    /* Feature List Styles */
-    /* ============================================================ */
-    .features-list {
-      text-align: left;
+    
+    /********************************************************/
+    /* Features Section */
+    /********************************************************/
+    .features-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem 1rem;
     }
-    .feature-item {
-      margin-bottom: 30px;
+    .features-heading {
+      text-align: center;
+      margin-bottom: 2rem;
     }
-    .feature-item h2 {
-      font-size: 1.5rem;
-      color: #1e88e5;
-      margin-bottom: 10px;
+    .features-heading h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #2e86de;
     }
-    .feature-item p {
+    .features-heading p {
       font-size: 1rem;
       color: #555;
     }
-    /* ============================================================ */
-    /* Developer Box */
-    /* ============================================================ */
-    .developer-box {
-      margin-top: 30px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px 20px;
-      background: #f0f0f0;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-      cursor: pointer;
-      width: fit-content;
-      margin: 30px auto 0 auto;
+    .features-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
     }
-    .developer-box:hover {
-      background: #e0e0e0;
+    .feature-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease;
     }
-    .developer-box img {
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    .feature-card img {
       width: 50px;
       height: 50px;
-      border-radius: 50%;
-      border: 2px solid #1e88e5;
+      margin-bottom: 1rem;
     }
-    .developer-box a {
-      text-decoration: none;
-      color: #1e88e5;
-      font-weight: 700;
+    .feature-card h2 {
+      font-size: 1.3rem;
+      color: #2e86de;
+      margin-bottom: 0.75rem;
     }
-    .developer-box a:hover {
-      text-decoration: underline;
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.4;
     }
-    /* ============================================================ */
+    
+    /********************************************************/
     /* Footer */
-    /* ============================================================ */
+    /********************************************************/
     footer {
-      width: 100%;
+      background: #333;
+      color: #fff;
       text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #ddd;
-      padding-top: 10px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      background: rgba(255,255,255,0.9);
+      padding: 1rem;
+      margin-top: auto;
     }
-    /* ============================================================ */
+    
+    /********************************************************/
     /* Animations */
-    /* ============================================================ */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /********************************************************/
+    @keyframes slideDown {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
-    /* ============================================================ */
-    /* Responsive Styles */
-    /* ============================================================ */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    
+    /********************************************************/
+    /* Responsive */
+    /********************************************************/
+    @media (max-width: 600px) {
+      .hero .title {
+        font-size: 2rem;
+      }
+      .feature-card h2 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Page Header / Hero -->
-    <section class="hero">
-      <h1>Purify Browser Features</h1>
-      <p>Discover how Purify enhances your browsing experience without compromising your privacy.</p>
-    </section>
-    
-    <!-- Features List -->
-    <section class="features-list">
-      <div class="feature-item">
-        <h2>Tracker &amp; Ad Blocking</h2>
-        <p>Automatically block intrusive ads and hidden trackers, giving you a faster and more secure browsing experience.</p>
-      </div>
-      <div class="feature-item">
-        <h2>Private Browsing Mode</h2>
-        <p>Browse in complete privacy with no history or cookies stored on your device, keeping your activity completely off the record.</p>
-      </div>
-      <div class="feature-item">
-        <h2>Lightweight &amp; Fast</h2>
-        <p>Engineered with minimal resource usage in mind, Purify runs smoothly even on older devices.</p>
-      </div>
-      <div class="feature-item">
-        <h2>Advanced Security</h2>
-        <p>Built-in phishing protection and secure browsing features help guard you against malicious sites and downloads.</p>
-      </div>
-      <div class="feature-item">
-        <h2>Customizable UI</h2>
-        <p>Customize your start page, choose your theme, and tailor toolbars to fit your style and workflow.</p>
-      </div>
-    </section>
-    
-    <!-- Developer Box -->
-    <div class="developer-box" onclick="window.open('https://github.com/chrizss','_blank')">
-      <img src="pfp.png" alt="Developer Profile Picture">
-      <a href="https://github.com/chrizss" target="_blank">chrizss.dev</a>
+  <!-- Navigation Bar -->
+  <nav>
+    <h2 onclick="location.href='index.html'">Purify</h2>
+    <ul>
+      <li onclick="location.href='index.html'">Home</li>
+      <li onclick="location.href='downloads.html'">Download</li>
+      <li onclick="location.href='features.html'">Features</li>
+      <li onclick="location.href='https://github.com/chrizss'">GitHub</li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="title">Features</h1>
+    <p class="sub-text">Explore the innovative features that make Purify Browser your best choice for secure and private browsing.</p>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="features-heading">
+      <h1>What We Offer</h1>
+      <p>Every feature is designed with your privacy, speed, and security in mind.</p>
     </div>
-  </div>
+    <div class="features-cards">
+      <!-- Feature Card 1 -->
+      <div class="feature-card">
+        <img src="adblock.svg" alt="Ad Blocker Icon">
+        <h2>Ad & Tracker Blocking</h2>
+        <p>Enjoy a clutter-free browsing experience without annoying ads or intrusive trackers.</p>
+      </div>
+      <!-- Feature Card 2 -->
+      <div class="feature-card">
+        <img src="private_mode.svg" alt="Private Mode Icon">
+        <h2>Private Browsing</h2>
+        <p>Browse anonymously with no history or cookies saved, ensuring complete privacy.</p>
+      </div>
+      <!-- Feature Card 3 -->
+      <div class="feature-card">
+        <img src="speed.svg" alt="Speed Icon">
+        <h2>Fast & Lightweight</h2>
+        <p>Optimized for speed, Purify Browser loads pages quickly while using minimal resources.</p>
+      </div>
+      <!-- Feature Card 4 -->
+      <div class="feature-card">
+        <img src="security.svg" alt="Security Icon">
+        <h2>Advanced Security</h2>
+        <p>Integrated protection against phishing and malware keeps your browsing secure.</p>
+      </div>
+      <!-- Feature Card 5 -->
+      <div class="feature-card">
+        <img src="customizable.svg" alt="Customizable Icon">
+        <h2>Customizable Interface</h2>
+        <p>Personalize your browsing experience with flexible themes and layout options.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
   <footer>
     &copy; 2025 Purify Inc. All rights reserved.
   </footer>
-  
-  <!-- Optional Script for Smooth Anchor Scrolling (if you want links) -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </body>
 </html>
