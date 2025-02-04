@@ -11,7 +11,7 @@
   <!-- Google Font: Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   
-  <!-- CSS Styles -->
+  <!-- CSS Styles (Unchanged) -->
   <style>
     /* ============================================================ */
     /* Global Reset and Base Styles */
@@ -32,7 +32,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 20px;
     }
     /* ============================================================ */
@@ -47,6 +47,7 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       text-align: center;
       animation: fadeIn 1s ease-out;
+      margin-bottom: 40px; /* so each "window" is nicely spaced */
     }
     /* ============================================================ */
     /* Hero Section */
@@ -181,6 +182,8 @@
   </style>
 </head>
 <body>
+
+  <!-- Window #1 (Main) -->
   <div class="container">
     <!-- Hero Section -->
     <section class="hero">
@@ -202,9 +205,42 @@
       <a href="https://github.com/chrizss" target="_blank">chrizss.dev</a>
     </div>
   </div>
+
+  <!-- Window #2 (Features / Showcase) -->
+  <div class="container">
+    <h2 style="color: #1e88e5; margin-bottom: 20px;">Why Choose Purify?</h2>
+    <p style="margin-bottom: 15px;">
+      • Faster than traditional browsers <br>
+      • Built-in ad & tracker blocking <br>
+      • Inspired by the best features of Chrome, Firefox, and Edge <br>
+      • Beautiful minimalist UI
+    </p>
+    <p style="margin-bottom: 15px;">
+      Join the movement towards a cleaner, safer, and more private web experience. 
+      No more ads, no more pop-ups, no more hidden trackers. 
+      Purify has everything you love about modern browsers—tabs, extensions, themes—without sacrificing your privacy.
+    </p>
+    <p style="margin-bottom: 20px;">
+      Try it for yourself and feel the difference.
+    </p>
+    <!-- Re-use the download button style for a "Learn More" or "Get Started" link -->
+    <a class="download-button" href="features.html">Explore Features</a>
+  </div>
+
+  <!-- Easter Egg Hidden: Not easy to find -->
+  <!-- 
+    Congrats on finding this hidden message! 
+    Secret phrase: "StayPure" 
+    If you see this, you’re an Easter Egg ninja. 
+  -->
+  <div class="container" style="display:none;">
+    <p>You found the hidden container! Shhhh...</p>
+  </div>
+
   <footer>
     &copy; 2025 Purify Inc. All rights reserved.
   </footer>
+
   <script>
     // Optional: Smooth scrolling for in-page anchors
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
