@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Purify Browser - Features</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="PurifyIcon.svg">
+  
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Styles (Same as in your main page) -->
+  <style>
+    /* ============================================================ */
+    /* Global Reset and Base Styles */
+    /* ============================================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #81D4FA, #B3E5FC);
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+    /* ============================================================ */
+    /* Container */
+    /* ============================================================ */
+    .container {
+      background: #fff;
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+      margin-bottom: 80px; /* To keep footer off the container */
+    }
+    /* ============================================================ */
+    /* Hero / Section Title */
+    /* ============================================================ */
+    .hero {
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #1e88e5;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    /* ============================================================ */
+    /* Feature List Styles */
+    /* ============================================================ */
+    .features-list {
+      text-align: left;
+    }
+    .feature-item {
+      margin-bottom: 30px;
+    }
+    .feature-item h2 {
+      font-size: 1.5rem;
+      color: #1e88e5;
+      margin-bottom: 10px;
+    }
+    .feature-item p {
+      font-size: 1rem;
+      color: #555;
+    }
+    /* ============================================================ */
+    /* Developer Box */
+    /* ============================================================ */
+    .developer-box {
+      margin-top: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      width: fit-content;
+      margin: 30px auto 0 auto;
+    }
+    .developer-box:hover {
+      background: #e0e0e0;
+    }
+    .developer-box img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #1e88e5;
+    }
+    .developer-box a {
+      text-decoration: none;
+      color: #1e88e5;
+      font-weight: 700;
+    }
+    .developer-box a:hover {
+      text-decoration: underline;
+    }
+    /* ============================================================ */
+    /* Footer */
+    /* ============================================================ */
+    footer {
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: rgba(255,255,255,0.9);
+    }
+    /* ============================================================ */
+    /* Animations */
+    /* ============================================================ */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* ============================================================ */
+    /* Responsive Styles */
+    /* ============================================================ */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Page Header / Hero -->
+    <section class="hero">
+      <h1>Purify Browser Features</h1>
+      <p>Discover how Purify enhances your browsing experience without compromising your privacy.</p>
+    </section>
+    
+    <!-- Features List -->
+    <section class="features-list">
+      <div class="feature-item">
+        <h2>Tracker &amp; Ad Blocking</h2>
+        <p>Automatically block intrusive ads and hidden trackers, giving you a faster and more secure browsing experience.</p>
+      </div>
+      <div class="feature-item">
+        <h2>Private Browsing Mode</h2>
+        <p>Browse in complete privacy with no history or cookies stored on your device, keeping your activity completely off the record.</p>
+      </div>
+      <div class="feature-item">
+        <h2>Lightweight &amp; Fast</h2>
+        <p>Engineered with minimal resource usage in mind, Purify runs smoothly even on older devices.</p>
+      </div>
+      <div class="feature-item">
+        <h2>Advanced Security</h2>
+        <p>Built-in phishing protection and secure browsing features help guard you against malicious sites and downloads.</p>
+      </div>
+      <div class="feature-item">
+        <h2>Customizable UI</h2>
+        <p>Customize your start page, choose your theme, and tailor toolbars to fit your style and workflow.</p>
+      </div>
+    </section>
+    
+    <!-- Developer Box -->
+    <div class="developer-box" onclick="window.open('https://github.com/chrizss','_blank')">
+      <img src="pfp.png" alt="Developer Profile Picture">
+      <a href="https://github.com/chrizss" target="_blank">chrizss.dev</a>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Purify Inc. All rights reserved.
+  </footer>
+  
+  <!-- Optional Script for Smooth Anchor Scrolling (if you want links) -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
