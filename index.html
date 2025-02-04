@@ -2,255 +2,242 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Purify Browser - A privacy-centric browser">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Purify Browser - Home</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="PurifyIcon.svg">
   
-  <!-- Google Font: Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   
-  <!-- CSS Styles (Unchanged) -->
   <style>
-    /* ============================================================ */
-    /* Global Reset and Base Styles */
-    /* ============================================================ */
+    /* 
+      Completely new style for the index page 
+      ----------------------------------------
+    */
+
+    /* Global Reset */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     html, body {
       height: 100%;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #81D4FA, #B3E5FC);
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7;
       color: #333;
-      line-height: 1.6;
+      overflow-x: hidden; 
+    }
+
+    /* Top Navigation Bar (Optional) */
+    nav {
+      background: #2e86de;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    nav h2 {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav li {
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    nav li:hover {
+      opacity: 0.7;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 50vh;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding: 20px;
-    }
-    /* ============================================================ */
-    /* Container */
-    /* ============================================================ */
-    .container {
-      background: #fff;
-      max-width: 600px;
-      width: 100%;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      justify-content: center;
       text-align: center;
-      animation: fadeIn 1s ease-out;
-      margin-bottom: 40px; /* so each "window" is nicely spaced */
+      padding: 2rem 1rem;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      position: relative;
     }
-    /* ============================================================ */
-    /* Hero Section */
-    /* ============================================================ */
-    .hero {
-      margin-bottom: 40px;
-    }
-    .hero .icon {
-      width: 128px;
-      height: 128px;
-      margin: 0 auto 20px;
-      display: block;
-    }
-    .hero h1 {
+    .hero .title {
       font-size: 3rem;
-      color: #1e88e5;
-      margin-bottom: 10px;
-    }
-    .version-info {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 30px;
-    }
-    /* ============================================================ */
-    /* Download Button */
-    /* ============================================================ */
-    .download-button {
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 1.125rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      text-decoration: none;
       color: #fff;
-      background-color: #1e88e5;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      animation: slideDown 1.2s ease forwards;
+    }
+    .hero .sub-text {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    .download-btn {
+      background: #ff7675;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
       border: none;
       border-radius: 8px;
-      transition: background 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      animation: pulse 2s infinite;
-      margin-top: 20px;
-    }
-    .download-button:hover {
-      background-color: #1565c0;
-      transform: translateY(-3px);
-    }
-    /* ============================================================ */
-    /* Developer Box */
-    /* ============================================================ */
-    .developer-box {
-      margin-top: 30px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px 20px;
-      background: #f0f0f0;
-      border-radius: 8px;
-      transition: background 0.3s ease;
       cursor: pointer;
-      width: fit-content;
-      margin: 30px auto 0 auto;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
-    .developer-box:hover {
-      background: #e0e0e0;
+    .download-btn:hover {
+      background: #e84357;
+      transform: translateY(-2px);
     }
-    .developer-box img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 2px solid #1e88e5;
-    }
-    .developer-box a {
-      text-decoration: none;
-      color: #1e88e5;
-      font-weight: 700;
-    }
-    .developer-box a:hover {
-      text-decoration: underline;
-    }
-    /* ============================================================ */
-    /* Footer */
-    /* ============================================================ */
-    footer {
-      width: 100%;
+
+    /* RIP Box Section */
+    .rip-box {
+      background: #fff;
+      padding: 1.5rem;
+      margin: -4rem auto 3rem;
+      max-width: 540px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       text-align: center;
+      position: relative;
+      z-index: 1; /* to ensure it shows above the hero's clipped background */
+    }
+    .rip-box h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #c0392b;
+    }
+    .rip-box p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Features / Info Section */
+    .info-section {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .info-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .info-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+    .info-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #2e86de;
+    }
+    .info-card p {
       font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #ddd;
-      padding-top: 10px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      background: rgba(255,255,255,0.9);
+      color: #666;
     }
-    /* ============================================================ */
-    /* Animations */
-    /* ============================================================ */
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    /* Keyframes */
+    @keyframes slideDown {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.05); opacity: 0.8; }
-      100% { transform: scale(1); opacity: 1; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero .title {
+        font-size: 2rem;
+      }
     }
-    /* ============================================================ */
-    /* Responsive Styles */
-    /* ============================================================ */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .download-button { font-size: 1rem; padding: 12px 24px; }
-    }
-    /* ============================================================ */
-    /* Filler Comments for Complexity */
-    /* Filler 1: Extra decorative comment */
-    /* Filler 2: Extra decorative comment */
-    /* Filler 3: Extra decorative comment */
-    /* Filler 4: Extra decorative comment */
-    /* Filler 5: Extra decorative comment */
-    /* Filler 6: Extra decorative comment */
-    /* Filler 7: Extra decorative comment */
-    /* Filler 8: Extra decorative comment */
-    /* Filler 9: Extra decorative comment */
-    /* Filler 10: Extra decorative comment */
   </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav>
+    <h2>Purify</h2>
+    <ul>
+      <li onclick="location.href='features.html'">Features</li>
+      <li onclick="location.href='download.html'">Download</li>
+      <li onclick="location.href='https://github.com/chrizss'">GitHub</li>
+    </ul>
+  </nav>
 
-  <!-- Window #1 (Main) -->
-  <div class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <img src="PurifyIcon.svg" alt="Purify Icon" class="icon">
-      <h1>Purify Browser</h1>
-      <div class="version-info">
-        Version 0.9.1<br>
-        Released: 3 February 2025
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="title">Purify Browser</h1>
+    <p class="sub-text">
+      Browse freely with no data tracking. Experience a modern, lightweight browser that puts privacy first.
+    </p>
+    <button class="download-btn" onclick="window.location.href='download.html'">Get Purify</button>
+  </section>
+
+  <!-- RIP Box (Tempi victims of 2023 in Greece) -->
+  <div class="rip-box">
+    <h3>In Memoriam</h3>
+    <p>RIP to the Tempi victims of 2023 in Greece. We remember and honor those who lost their lives.</p>
+  </div>
+
+  <!-- Info Section -->
+  <section class="info-section">
+    <h2>Why Choose Purify?</h2>
+    <div class="info-cards">
+      <div class="info-card">
+        <h3>Private by Default</h3>
+        <p>Purify never tracks your browsing activity. Enjoy a fully private experience, free of invasive ads.</p>
       </div>
-      <p>
-        Purify Browser is the only browser that never tracks your activity and guarantees complete anonymity.
-      </p>
-      <!-- Download Button: Navigates to download.html -->
-      <a class="download-button" href="download.html">Download Purify</a>
-    </section>
-    <!-- Developer Box -->
-    <div class="developer-box" onclick="window.location.href='https://github.com/chrizss'">
-      <img src="pfp.png" alt="Developer Profile Picture">
-      <a href="https://github.com/chrizss" target="_blank">chrizss.dev</a>
+      <div class="info-card">
+        <h3>Lightweight & Fast</h3>
+        <p>Faster page loads and lower system resources make Purify ideal for any device, old or new.</p>
+      </div>
+      <div class="info-card">
+        <h3>Security First</h3>
+        <p>Automatic security checks against phishing and malicious sites to keep your data protected.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Window #2 (Features / Showcase) -->
-  <div class="container">
-    <h2 style="color: #1e88e5; margin-bottom: 20px;">Why Choose Purify?</h2>
-    <p style="margin-bottom: 15px;">
-      • Faster than traditional browsers <br>
-      • Built-in ad & tracker blocking <br>
-      • Inspired by the best features of Chrome, Firefox, and Edge <br>
-      • Beautiful minimalist UI
-    </p>
-    <p style="margin-bottom: 15px;">
-      Join the movement towards a cleaner, safer, and more private web experience. 
-      No more ads, no more pop-ups, no more hidden trackers. 
-      Purify has everything you love about modern browsers—tabs, extensions, themes—without sacrificing your privacy.
-    </p>
-    <p style="margin-bottom: 20px;">
-      Try it for yourself and feel the difference.
-    </p>
-    <!-- Re-use the download button style for a "Learn More" or "Get Started" link -->
-    <a class="download-button" href="features.html">Explore Features</a>
-  </div>
-
-  <!-- Easter Egg Hidden: Not easy to find -->
-  <!-- 
-    Congrats on finding this hidden message! 
-    Secret phrase: "StayPure" 
-    If you see this, you’re an Easter Egg ninja. 
-  -->
-  <div class="container" style="display:none;">
-    <p>You found the hidden container! Shhhh...</p>
-  </div>
-
+  <!-- Footer -->
   <footer>
     &copy; 2025 Purify Inc. All rights reserved.
   </footer>
-
-  <script>
-    // Optional: Smooth scrolling for in-page anchors
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </body>
 </html>
